@@ -289,8 +289,9 @@ function renderList() {
     return;
   }
   grid.innerHTML = topics.map((t, i) => {
+    // Googleドライブ画像はCORS制限のためproxyを通して表示
     const imgHtml = t.image
-      ? `<div class="topic-img"><img src="${t.image}" alt="${t.title}" loading="lazy"></div>`
+      ? `<div class="topic-img" style="background:url('${t.image}') center/cover no-repeat;min-height:180px"></div>`
       : `<div class="topic-img"><div class="topic-img-placeholder"><span>Photo</span></div></div>`;
     return `
     <div class="topic-card" onclick="showDetail(${i})">
@@ -308,9 +309,16 @@ function showDetail(i) {
   if (!t) return;
 
   // ヒーロー画像
-  document.getElementById('detail-hero-img').innerHTML = t.image
-    ? `<img src="${t.image}" alt="${t.title}">`
-    : `<div class="detail-hero-placeholder"><span>Photo Here</span></div>`;
+  // Googleドライブ画像はbackground-imageで表示
+  const heroEl = document.getElementById('detail-hero-img');
+  if (t.image) {
+    heroEl.style.backgroundImage = `url('${t.image}')`;
+    heroEl.style.backgroundSize = 'cover';
+    heroEl.style.backgroundPosition = 'center';
+    heroEl.innerHTML = '';
+  } else {
+    heroEl.innerHTML = `<div class="detail-hero-placeholder"><span>Photo Here</span></div>`;
+  }
 
   document.getElementById('detail-cat').textContent   = t.category || 'INFO';
   document.getElementById('detail-title').textContent = t.title;
