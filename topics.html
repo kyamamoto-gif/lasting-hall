@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topics | LASTING HALL - 最新情報</title>
+<meta name="description" content="LASTING HALLの最新情報。ライブ・イベント・お知らせをお届けします。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lasting-hall.jp/topics/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#e8001a;--red-dark:#b50014;
+  --white:#ffffff;
+  --gray-700:#222222;--gray-800:#161616;
+  --gray-900:#0d0d0d;--black:#080808;--nav-h:64px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Noto Sans JP','Oswald',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:100;background:var(--black);border-bottom:1px solid #222}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.2em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-family:'Oswald',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:#bbb;text-decoration:none;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-reserve{font-family:'Oswald',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);background:var(--red);padding:10px 22px;text-decoration:none;transition:background 0.2s}
+.nav-reserve:hover{background:var(--red-dark)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-hamburger span{display:block;width:22px;height:1px;background:var(--white)}
+
+.page-hero{padding-top:var(--nav-h);height:240px;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:linear-gradient(135deg,#0d0d0d 0%,#1a0000 60%,#0d0d0d 100%)}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px}
+.page-hero-inner{position:relative;max-width:1200px;margin:0 auto;padding:0 40px 40px;width:100%}
+.breadcrumb{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#555;margin-bottom:12px}
+.breadcrumb a,.breadcrumb span.link{color:#555;text-decoration:none;cursor:pointer;transition:color 0.2s}
+.breadcrumb a:hover,.breadcrumb span.link:hover{color:var(--red)}
+.breadcrumb span.sep{margin:0 8px;color:#333}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,8vw,100px);line-height:0.9;letter-spacing:0.03em;color:var(--white)}
+.page-title em{color:var(--red);font-style:normal}
+
+.section-inner{max-width:1200px;margin:0 auto;padding:0 40px}
+
+/* ── LIST VIEW ── */
+#view-list{padding:60px 0 100px}
+
+.loading{text-align:center;padding:80px 0;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:#333}
+
+.topics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-700)}
+.topic-card{background:var(--gray-800);padding:36px 28px;border-top:2px solid transparent;transition:all 0.2s;cursor:pointer;display:block}
+.topic-card:hover{background:#1a0000;border-top-color:var(--red)}
+.topic-img{aspect-ratio:16/9;background:#111;margin-bottom:20px;overflow:hidden;position:relative}
+.topic-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s}
+.topic-card:hover .topic-img img{transform:scale(1.04)}
+.topic-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#1a1a1a}
+.topic-img-placeholder span{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:#2a2a2a}
+.topic-cat{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.topic-title{font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:400;color:var(--white);line-height:1.8;margin-bottom:16px}
+.topic-date{font-family:'Oswald',sans-serif;font-size:12px;color:#555;letter-spacing:0.1em}
+.topic-arrow{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#333;margin-top:16px;transition:color 0.2s}
+.topic-card:hover .topic-arrow{color:var(--red)}
+
+.no-topics{grid-column:1/-1;padding:80px 0;text-align:center}
+.no-topics p{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:#333}
+
+/* ── DETAIL VIEW ── */
+#view-detail{padding:60px 0 100px;display:none}
+
+.detail-back{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#666;cursor:pointer;display:inline-flex;align-items:center;gap:8px;margin-bottom:48px;transition:color 0.2s;border:none;background:none;padding:0}
+.detail-back::before{content:'←'}
+.detail-back:hover{color:var(--white)}
+
+.detail-hero-img{aspect-ratio:16/7;background:#1a1a1a;margin-bottom:60px;overflow:hidden;position:relative}
+.detail-hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+.detail-hero-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.detail-hero-placeholder span{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:#2a2a2a}
+
+.detail-layout{display:grid;grid-template-columns:1fr 340px;gap:80px;align-items:start}
+
+.detail-main{}
+.detail-cat{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.detail-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(20px,3vw,30px);font-weight:700;color:var(--white);line-height:1.6;margin-bottom:24px}
+.detail-date{font-family:'Oswald',sans-serif;font-size:13px;color:#555;letter-spacing:0.1em;margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid #222}
+.detail-body{font-size:16px;color:#ccc;line-height:2.2;white-space:pre-wrap}
+
+.detail-side{}
+.side-card{background:var(--gray-800);border:1px solid var(--gray-700);padding:32px 28px;margin-bottom:16px}
+.side-card-title{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.35em;text-transform:uppercase;color:#555;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #222}
+.btn-red{font-family:'Oswald',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);background:var(--red);padding:14px 28px;text-decoration:none;border:1px solid var(--red);transition:all 0.2s;display:block;text-align:center}
+.btn-red:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.btn-ghost{font-family:'Oswald',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);background:transparent;padding:14px 28px;text-decoration:none;border:1px solid #444;transition:all 0.2s;display:block;text-align:center;margin-top:10px}
+.btn-ghost:hover{border-color:var(--white)}
+.side-info-row{display:flex;flex-direction:column;gap:4px;padding:12px 0;border-bottom:1px solid #1a1a1a}
+.side-info-row:last-child{border-bottom:none}
+.side-info-label{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:#444}
+.side-info-value{font-size:14px;color:#ccc}
+
+/* FOOTER */
+footer{background:var(--gray-900);padding:72px 0 36px;border-top:1px solid var(--gray-700)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--gray-700)}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.2em;color:var(--white);margin-bottom:12px;display:block}
+.footer-logo span{color:var(--red)}
+.footer-brand p{font-size:14px;color:#888;line-height:2;margin-bottom:20px}
+.footer-sns{display:flex;gap:8px}
+.sns-btn{width:32px;height:32px;border:1px solid var(--gray-700);display:flex;align-items:center;justify-content:center;color:#555;text-decoration:none;font-size:11px;transition:all 0.2s}
+.sns-btn:hover{border-color:var(--red);color:var(--red)}
+.footer-col h4{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:#555;margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:14px;color:#888;text-decoration:none;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--white)}
+.footer-info dt{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:3px}
+.footer-info dd{font-size:14px;color:#888;margin-bottom:12px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.15em;color:#444}
+
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links,.nav-reserve{display:none}
+  .nav-hamburger{display:flex}
+  .page-hero-inner,.section-inner{padding:0 20px}
+  .topics-grid{grid-template-columns:1fr}
+  .detail-layout{grid-template-columns:1fr;gap:40px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  section{padding:48px 0 80px!important}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">LASTING <span>HALL</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Top</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="hall-rent.html">Hall Rent</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="schedule.html" class="nav-reserve">Schedule</a>
+  <div class="nav-hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb" id="breadcrumb">
+      <a href="index.html">Home</a><span class="sep">—</span>Topics
+    </div>
+    <h1 class="page-title" id="page-title">LATEST <em>TOPICS</em></h1>
+  </div>
+</div>
+
+<!-- LIST VIEW -->
+<section id="view-list">
+  <div class="section-inner">
+    <div class="topics-grid" id="topics-grid">
+      <div class="loading">Loading...</div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL VIEW -->
+<section id="view-detail">
+  <div class="section-inner">
+    <button class="detail-back" onclick="showList()">一覧に戻る</button>
+    <div class="detail-hero-img" id="detail-hero-img"></div>
+    <div class="detail-layout">
+      <div class="detail-main">
+        <div class="detail-cat" id="detail-cat"></div>
+        <h1 class="detail-title" id="detail-title"></h1>
+        <div class="detail-date" id="detail-date"></div>
+        <div class="detail-body" id="detail-body"></div>
+      </div>
+      <div class="detail-side">
+        <div class="side-card">
+          <div class="side-card-title">Reservation</div>
+          <a href="schedule.html" class="btn-red">ライブを予約する</a>
+          <a href="contact.html" class="btn-ghost">お問い合わせ</a>
+        </div>
+        <div class="side-card" id="side-external" style="display:none">
+          <div class="side-card-title">Ticket</div>
+          <a href="#" class="btn-red" id="external-link" target="_blank" rel="noopener">チケットを購入する</a>
+        </div>
+        <div class="side-card">
+          <div class="side-card-title">Venue Info</div>
+          <div class="side-info-row">
+            <span class="side-info-label">Address</span>
+            <span class="side-info-value">長崎県長崎市本石灰町<br>ビッグビートビル</span>
+          </div>
+          <div class="side-info-row">
+            <span class="side-info-label">Tel</span>
+            <span class="side-info-value">095-000-0000</span>
+          </div>
+          <div class="side-info-row">
+            <span class="side-info-label">Open</span>
+            <span class="side-info-value">18:00 – 24:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="section-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">LASTING <span>HALL</span></span>
+        <p>長崎市のライブハウス。<br>長崎県長崎市本石灰町<br>ビッグビートビル</p>
+        <div class="footer-sns">
+          <a href="#" class="sns-btn" aria-label="Instagram">ig</a>
+          <a href="#" class="sns-btn" aria-label="X">x</a>
+          <a href="#" class="sns-btn" aria-label="Facebook">fb</a>
+          <a href="#" class="sns-btn" aria-label="LINE">ln</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="hall-rent.html">Hall Rent</a></li>
+          <li><a href="company.html">Company</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>For You</h4>
+        <ul>
+          <li><a href="schedule.html">ライブを観る</a></li>
+          <li><a href="hall-rent.html">ホールを借りる</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Access</h4>
+        <dl class="footer-info">
+          <dt>Address</dt><dd>長崎県長崎市本石灰町<br>ビッグビートビル</dd>
+          <dt>Tel</dt><dd>095-000-0000</dd>
+          <dt>Open</dt><dd>18:00 – 24:00</dd>
+          <dt>Closed</dt><dd>不定休</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 LASTING HALL. All rights reserved.</p>
+      <p class="footer-copy">
+        <a href="#" style="color:#444;text-decoration:none;margin-right:16px">Privacy</a>
+        <a href="#" style="color:#444;text-decoration:none">Sitemap</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// Googleスプレッドシート連携
+// ============================================================
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyua6PiVjey2XPcuf_BamnskDe4Hm7LpzT4xTAyBCWxhaiscHEAC5Lzz1mp-rSPbj8E/exec';
+
+let topics = [];
+
+async function fetchTopics() {
+  try {
+    const res = await fetch(SHEET_URL);
+    const data = await res.json();
+    topics = data;
+    renderList();
+  } catch(e) {
+    console.error('データ取得エラー:', e);
+    document.getElementById('topics-grid').innerHTML =
+      '<div class="no-topics"><p>データを取得できませんでした</p></div>';
+  }
+}
+
+function renderList() {
+  const grid = document.getElementById('topics-grid');
+  if (!topics.length) {
+    grid.innerHTML = '<div class="no-topics"><p>現在、お知らせはありません</p></div>';
+    return;
+  }
+  grid.innerHTML = topics.map((t, i) => {
+    const imgHtml = t.image
+      ? `<div class="topic-img"><img src="${t.image}" alt="${t.title}" loading="lazy"></div>`
+      : `<div class="topic-img"><div class="topic-img-placeholder"><span>Photo</span></div></div>`;
+    return `
+    <div class="topic-card" onclick="showDetail(${i})">
+      ${imgHtml}
+      <div class="topic-cat">${t.category || 'INFO'}</div>
+      <div class="topic-title">${t.title}</div>
+      <div class="topic-date">${t.date}</div>
+      <div class="topic-arrow">READ MORE →</div>
+    </div>`;
+  }).join('');
+}
+
+function showDetail(i) {
+  const t = topics[i];
+  if (!t) return;
+
+  // ヒーロー画像
+  document.getElementById('detail-hero-img').innerHTML = t.image
+    ? `<img src="${t.image}" alt="${t.title}">`
+    : `<div class="detail-hero-placeholder"><span>Photo Here</span></div>`;
+
+  document.getElementById('detail-cat').textContent   = t.category || 'INFO';
+  document.getElementById('detail-title').textContent = t.title;
+  document.getElementById('detail-date').textContent  = t.date;
+  document.getElementById('detail-body').textContent  = t.desc || '';
+
+  // 外部リンク（チケット等）
+  const sideExternal = document.getElementById('side-external');
+  if (t.url) {
+    sideExternal.style.display = 'block';
+    document.getElementById('external-link').href = t.url;
+  } else {
+    sideExternal.style.display = 'none';
+  }
+
+  // パンくず・タイトル更新
+  document.getElementById('breadcrumb').innerHTML =
+    `<a href="index.html">Home</a><span class="sep">—</span>
+     <span class="link" onclick="showList()">Topics</span>
+     <span class="sep">—</span>${t.title}`;
+  document.getElementById('page-title').innerHTML = `TOPIC <em>DETAIL</em>`;
+
+  document.getElementById('view-list').style.display   = 'none';
+  document.getElementById('view-detail').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showList() {
+  document.getElementById('view-list').style.display   = 'block';
+  document.getElementById('view-detail').style.display = 'none';
+  document.getElementById('breadcrumb').innerHTML =
+    `<a href="index.html">Home</a><span class="sep">—</span>Topics`;
+  document.getElementById('page-title').innerHTML = `LATEST <em>TOPICS</em>`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+fetchTopics();
+</script>
+</body>
+</html>
