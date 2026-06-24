@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Company | LASTING HALL - 会社概要</title>
+<meta name="description" content="LASTING HALL（ラスティングホール）の会社概要。運営会社：株式会社Rising。長崎県長崎市本石灰町ビッグビートビル。">
+<meta property="og:title" content="Company | LASTING HALL">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lasting-hall.jp/company/">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lasting-hall.jp/company/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "株式会社Rising",
+  "url": "https://lasting-hall.jp/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "本石灰町 ビッグビートビル",
+    "addressLocality": "長崎市",
+    "addressRegion": "長崎県",
+    "addressCountry": "JP"
+  },
+  "telephone": "095-000-0000"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#e8001a;--red-dark:#b50014;
+  --white:#ffffff;
+  --gray-700:#222222;--gray-800:#161616;
+  --gray-900:#0d0d0d;--black:#080808;--nav-h:64px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Noto Sans JP','Oswald',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:100;background:var(--black);border-bottom:1px solid #222}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.2em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-family:'Oswald',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:#bbb;text-decoration:none;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-reserve{font-family:'Oswald',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);background:var(--red);padding:10px 22px;text-decoration:none;transition:background 0.2s}
+.nav-reserve:hover{background:var(--red-dark)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-hamburger span{display:block;width:22px;height:1px;background:var(--white)}
+
+.page-hero{padding-top:var(--nav-h);height:280px;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:linear-gradient(135deg,#0d0d0d 0%,#1a0000 60%,#0d0d0d 100%)}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px}
+.page-hero-inner{position:relative;max-width:1200px;margin:0 auto;padding:0 40px 48px;width:100%}
+.breadcrumb{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#555;margin-bottom:16px}
+.breadcrumb a{color:#555;text-decoration:none;transition:color 0.2s}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{margin:0 8px}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,8vw,100px);line-height:0.9;letter-spacing:0.03em;color:var(--white)}
+.page-title em{color:var(--red);font-style:normal}
+
+.section-label{font-family:'Oswald',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.5em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,4vw,56px);letter-spacing:0.04em;color:var(--white);line-height:1;margin-bottom:20px}
+.section-title em{color:var(--red);font-style:normal}
+.rule{width:40px;height:2px;background:var(--red);margin:16px 0 28px}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 40px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+.btn-red{font-family:'Oswald',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);background:var(--red);padding:14px 36px;text-decoration:none;border:1px solid var(--red);transition:all 0.2s;display:inline-block}
+.btn-red:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.btn-ghost{font-family:'Oswald',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);background:transparent;padding:14px 36px;text-decoration:none;border:1px solid #555;transition:all 0.2s;display:inline-block}
+.btn-ghost:hover{border-color:var(--white)}
+
+/* COMPANY INFO */
+#company{padding:100px 0;background:var(--gray-900)}
+.company-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.company-table{width:100%;border-collapse:collapse}
+.company-table tr{border-bottom:1px solid #2a2a2a}
+.company-table th{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#888;font-weight:400;text-align:left;padding:22px 0;width:140px;vertical-align:top}
+.company-table td{font-size:16px;color:#ddd;padding:22px 0;line-height:1.8}
+.company-table td strong{color:var(--white);font-weight:400}
+.company-table td.placeholder{color:#555;font-style:italic;font-size:14px}
+
+.group-info{margin-top:48px}
+.group-title{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.35em;text-transform:uppercase;color:#555;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #2a2a2a}
+.group-card{background:var(--gray-800);border:1px solid #2a2a2a;padding:24px 28px;margin-bottom:2px;transition:border-color 0.2s}
+.group-card:hover{border-color:#444}
+.group-card-name{font-family:'Oswald',sans-serif;font-size:16px;font-weight:500;color:var(--white);margin-bottom:6px;letter-spacing:0.05em}
+.group-card-desc{font-size:14px;color:#888;line-height:1.8}
+
+.company-visual{position:relative}
+.company-frame{aspect-ratio:3/4;background:#1a0000;border:1px solid var(--gray-700);position:relative;display:flex;align-items:center;justify-content:center}
+.company-frame::before{content:'';position:absolute;top:12px;left:12px;right:12px;bottom:12px;border:1px solid rgba(232,0,26,0.15)}
+.company-frame-text{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#333}
+.company-badge{position:absolute;bottom:-1px;right:-1px;background:var(--red);padding:20px 24px;text-align:center}
+.company-badge-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.1em;color:var(--white);line-height:1;margin-bottom:4px}
+.company-badge-sub{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.6)}
+
+/* SHOP INFO */
+#shop{padding:100px 0;background:var(--black)}
+.shop-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.shop-table{width:100%;border-collapse:collapse}
+.shop-table tr{border-bottom:1px solid #2a2a2a}
+.shop-table th{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#888;font-weight:400;text-align:left;padding:22px 0;width:140px;vertical-align:top}
+.shop-table td{font-size:16px;color:#ddd;padding:22px 0;line-height:1.8}
+.shop-table td strong{color:var(--white);font-weight:400}
+.shop-note{background:#1a0000;border-left:3px solid var(--red);padding:20px 24px;margin-top:32px}
+.shop-note p{font-size:15px;color:#aaa;line-height:1.9}
+
+.map-wrap{background:var(--gray-800);border:1px solid var(--gray-700);aspect-ratio:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;position:relative}
+.map-placeholder{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:#444}
+.map-note{font-size:12px;color:#333;letter-spacing:0.1em;text-align:center;line-height:2;padding:0 20px}
+
+/* SNS */
+#sns{padding:100px 0;background:var(--gray-900)}
+.sns-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray-700);margin-top:60px}
+.sns-card{background:var(--gray-800);padding:40px 32px;text-align:center;border-top:2px solid transparent;transition:all 0.2s;text-decoration:none;display:block}
+.sns-card:hover{background:#1a0000;border-top-color:var(--red)}
+.sns-icon{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.1em;color:var(--red);margin-bottom:12px}
+.sns-name{font-family:'Oswald',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);margin-bottom:8px}
+.sns-handle{font-size:13px;color:#666}
+
+/* CTA */
+#cta{padding:100px 0;background:var(--red);text-align:center;position:relative;overflow:hidden}
+#cta::before{content:'LASTING HALL';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:120px;color:rgba(0,0,0,0.1);letter-spacing:0.1em;white-space:nowrap;pointer-events:none}
+#cta .section-label{color:rgba(255,255,255,0.6)}
+#cta .section-title{color:var(--white)}
+#cta p{font-size:17px;color:rgba(255,255,255,0.8);margin-bottom:40px}
+.btn-black{font-family:'Oswald',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);background:var(--black);padding:14px 36px;text-decoration:none;border:1px solid var(--black);transition:all 0.2s;display:inline-block}
+.btn-black:hover{background:#222}
+#cta .btn-ghost{color:var(--white);border-color:rgba(255,255,255,0.5)}
+#cta .btn-ghost:hover{border-color:var(--white)}
+
+/* FOOTER */
+footer{background:var(--gray-900);padding:72px 0 36px;border-top:1px solid var(--gray-700)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--gray-700)}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.2em;color:var(--white);margin-bottom:12px;display:block}
+.footer-logo span{color:var(--red)}
+.footer-brand p{font-size:14px;color:#888;line-height:2;margin-bottom:20px}
+.footer-sns{display:flex;gap:8px}
+.sns-btn{width:32px;height:32px;border:1px solid var(--gray-700);display:flex;align-items:center;justify-content:center;color:#666;text-decoration:none;font-size:11px;transition:all 0.2s}
+.sns-btn:hover{border-color:var(--red);color:var(--red)}
+.footer-col h4{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:#555;margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:14px;color:#888;text-decoration:none;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--white)}
+.footer-info dt{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:3px}
+.footer-info dd{font-size:14px;color:#888;margin-bottom:12px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.15em;color:#444}
+
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links,.nav-reserve{display:none}
+  .nav-hamburger{display:flex}
+  .page-hero-inner,.section-inner{padding:0 20px}
+  .page-hero-inner{padding-bottom:40px}
+  .company-grid,.shop-grid{grid-template-columns:1fr;gap:48px}
+  .company-visual{display:none}
+  .map-wrap{display:none}
+  .sns-grid{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  section{padding:72px 0!important}
+}
+@media(max-width:600px){
+  .sns-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">LASTING <span>HALL</span></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="hall-rent.html">Hall Rent</a></li>
+    <li><a href="company.html" class="active">Company</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="schedule.html" class="nav-reserve">Schedule</a>
+  <div class="nav-hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>—</span>Company</div>
+    <h1 class="page-title">COM<em>PANY</em></h1>
+  </div>
+</div>
+
+<!-- COMPANY -->
+<section id="company">
+  <div class="section-inner">
+    <div class="company-grid">
+      <div class="reveal">
+        <p class="section-label">Corporate Info</p>
+        <h2 class="section-title">会社<em>概要</em></h2>
+        <div class="rule"></div>
+        <table class="company-table">
+          <tr>
+            <th>会社名</th>
+            <td><strong>株式会社Rising</strong></td>
+          </tr>
+          <tr>
+            <th>代表者</th>
+            <td class="placeholder">○○ ○○</td>
+          </tr>
+          <tr>
+            <th>設立</th>
+            <td class="placeholder">○○○○年○月</td>
+          </tr>
+          <tr>
+            <th>資本金</th>
+            <td class="placeholder">○○○万円</td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>
+              <strong>LASTING HALL</strong>（ライブハウス）の運営<br>
+              飲食店の運営（伊勢勝）<br>
+              人材派遣業
+            </td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>長崎県長崎市本石灰町<br>ビッグビートビル</td>
+          </tr>
+          <tr>
+            <th>TEL</th>
+            <td>095-000-0000</td>
+          </tr>
+        </table>
+
+        <!-- グループ事業 -->
+        <div class="group-info">
+          <div class="group-title">Group Business</div>
+          <div class="group-card">
+            <div class="group-card-name">LASTING HALL</div>
+            <div class="group-card-desc">ライブハウスの運営。長崎県長崎市本石灰町ビッグビートビル。</div>
+          </div>
+          <div class="group-card">
+            <div class="group-card-name">伊勢勝</div>
+            <div class="group-card-desc">飲食店の運営。</div>
+          </div>
+          <div class="group-card">
+            <div class="group-card-name">人材派遣業</div>
+            <div class="group-card-desc">人材派遣・スタッフィングサービスの提供。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="company-visual reveal">
+        <div class="company-frame">
+          <div class="company-frame-text">Company Photo Here</div>
+          <div class="company-badge">
+            <div class="company-badge-name">RISING</div>
+            <div class="company-badge-sub">株式会社</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP INFO -->
+<section id="shop">
+  <div class="section-inner">
+    <div class="shop-grid">
+      <div class="reveal">
+        <p class="section-label">Shop Info</p>
+        <h2 class="section-title">店舗<em>情報</em></h2>
+        <div class="rule"></div>
+        <table class="shop-table">
+          <tr>
+            <th>店舗名</th>
+            <td><strong>LASTING HALL</strong><br>（ラスティングホール）</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>
+              〒○○○-○○○○<br>
+              <strong>長崎県長崎市本石灰町</strong><br>
+              ビッグビートビル
+            </td>
+          </tr>
+          <tr>
+            <th>TEL</th>
+            <td><strong>095-000-0000</strong></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>info@lasting-hall.jp</td>
+          </tr>
+          <tr>
+            <th>営業時間</th>
+            <td><strong>18:00 – 24:00</strong><br><span style="font-size:13px;color:#666">ライブ開始時間はスケジュールをご確認ください</span></td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td>不定休<br><span style="font-size:13px;color:#666">SNSにてお知らせします</span></td>
+          </tr>
+          <tr>
+            <th>アクセス</th>
+            <td>○○駅より徒歩○分</td>
+          </tr>
+          <tr>
+            <th>駐車場</th>
+            <td>近隣コインパーキングをご利用ください</td>
+          </tr>
+        </table>
+        <div class="shop-note">
+          <p>ご来場の際は、最新のスケジュール・営業情報をSNSまたはウェブサイトにてご確認ください。</p>
+        </div>
+        <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="schedule.html" class="btn-red">スケジュールを見る</a>
+          <a href="tel:095-000-0000" class="btn-ghost">電話する</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="map-wrap">
+          <span style="font-size:40px;opacity:0.1">🗺</span>
+          <span class="map-placeholder">Google Map</span>
+          <p class="map-note">長崎県長崎市本石灰町<br>ビッグビートビル<br><span style="color:#2a2a2a;font-size:11px">※ 埋め込みマップをここに設置</span></p>
+        </div>
+        <p style="font-size:14px;color:#888;margin-top:20px;line-height:2">
+          ○○線「○○駅」より徒歩○分<br>
+          ○○線「○○駅」より徒歩○分
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNS -->
+<section id="sns">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Follow Us</p>
+      <h2 class="section-title">公式<em>SNS</em></h2>
+    </div>
+    <div class="sns-grid reveal">
+      <a href="#" class="sns-card" target="_blank" rel="noopener">
+        <div class="sns-icon">IG</div>
+        <div class="sns-name">Instagram</div>
+        <div class="sns-handle">@lasting_hall</div>
+      </a>
+      <a href="#" class="sns-card" target="_blank" rel="noopener">
+        <div class="sns-icon">X</div>
+        <div class="sns-name">X (Twitter)</div>
+        <div class="sns-handle">@lasting_hall</div>
+      </a>
+      <a href="#" class="sns-card" target="_blank" rel="noopener">
+        <div class="sns-icon">FB</div>
+        <div class="sns-name">Facebook</div>
+        <div class="sns-handle">LASTING HALL</div>
+      </a>
+      <a href="#" class="sns-card" target="_blank" rel="noopener">
+        <div class="sns-icon">LINE</div>
+        <div class="sns-name">LINE</div>
+        <div class="sns-handle">公式アカウント</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <p class="section-label">Contact</p>
+  <h2 class="section-title" style="font-size:clamp(36px,5vw,72px);margin-bottom:16px">お気軽に<em style="color:rgba(255,255,255,0.4)">ご連絡を</em></h2>
+  <p>ライブのご予約・ホール貸し出しのご相談など、<br>どんなことでもお気軽にお問い合わせください。</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="tel:095-000-0000" class="btn-black">電話する</a>
+    <a href="contact.html" class="btn-ghost">お問い合わせフォーム</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="section-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">LASTING <span>HALL</span></span>
+        <p>長崎市のライブハウス。<br>長崎県長崎市本石灰町<br>ビッグビートビル</p>
+        <div class="footer-sns">
+          <a href="#" class="sns-btn" aria-label="Instagram">ig</a>
+          <a href="#" class="sns-btn" aria-label="X">x</a>
+          <a href="#" class="sns-btn" aria-label="Facebook">fb</a>
+          <a href="#" class="sns-btn" aria-label="LINE">ln</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="hall-rent.html">Hall Rent</a></li>
+          <li><a href="company.html">Company</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#company">会社概要</a></li>
+          <li><a href="#shop">店舗情報</a></li>
+          <li><a href="#sns">公式SNS</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Access</h4>
+        <dl class="footer-info">
+          <dt>Address</dt><dd>長崎県長崎市本石灰町<br>ビッグビートビル</dd>
+          <dt>Tel</dt><dd>095-000-0000</dd>
+          <dt>Open</dt><dd>18:00 – 24:00</dd>
+          <dt>Closed</dt><dd>不定休</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 LASTING HALL. All rights reserved.</p>
+      <p class="footer-copy">
+        <a href="#" style="color:#444;text-decoration:none;margin-right:16px">Privacy</a>
+        <a href="#" style="color:#444;text-decoration:none">Sitemap</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target)}});
+},{threshold:0.1});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
