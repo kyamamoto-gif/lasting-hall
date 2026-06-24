@@ -30,32 +30,6 @@
   },
   "openingHours": "Fr-Su 18:00-24:00"
 }
-
-// ── TOPICS スプレッドシート連携 ──
-const TOPICS_URL = 'https://script.google.com/macros/s/AKfycbyua6PiVjey2XPcuf_BamnskDe4Hm7LpzT4xTAyBCWxhaiscHEAC5Lzz1mp-rSPbj8E/exec';
-async function loadTopTopics() {
-  try {
-    const res = await fetch(TOPICS_URL);
-    const data = await res.json();
-    const grid = document.getElementById('top-topics-grid');
-    if (!data.length) {
-      grid.innerHTML = '<div style="grid-column:1/-1;padding:40px 0;text-align:center;font-family:Oswald,sans-serif;font-size:12px;letter-spacing:0.3em;color:#555">現在お知らせはありません</div>';
-      return;
-    }
-    const latest = data.slice(0, 3);
-    grid.innerHTML = latest.map(t => `
-      <a href="topics.html" class="topic-card" style="text-decoration:none;display:block">
-        <div class="topic-cat">${t.category || 'INFO'}</div>
-        <div class="topic-title">${t.title}</div>
-        <div class="topic-date">${t.date}</div>
-      </a>`).join('');
-  } catch(e) {
-    console.log('Topics load error:', e);
-    const grid = document.getElementById('top-topics-grid');
-    if (grid) grid.innerHTML = '';
-  }
-}
-loadTopTopics();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -522,6 +496,32 @@ const obs=new IntersectionObserver((entries)=>{
   });
 },{threshold:0.1});
 reveals.forEach(el=>obs.observe(el));
+
+// ── TOPICS スプレッドシート連携 ──
+const TOPICS_URL = 'https://script.google.com/macros/s/AKfycbyua6PiVjey2XPcuf_BamnskDe4Hm7LpzT4xTAyBCWxhaiscHEAC5Lzz1mp-rSPbj8E/exec';
+async function loadTopTopics() {
+  try {
+    const res = await fetch(TOPICS_URL);
+    const data = await res.json();
+    const grid = document.getElementById('top-topics-grid');
+    if (!data.length) {
+      grid.innerHTML = '<div style="grid-column:1/-1;padding:40px 0;text-align:center;font-family:Oswald,sans-serif;font-size:12px;letter-spacing:0.3em;color:#555">現在お知らせはありません</div>';
+      return;
+    }
+    const latest = data.slice(0, 3);
+    grid.innerHTML = latest.map(t => `
+      <a href="topics.html" class="topic-card" style="text-decoration:none;display:block">
+        <div class="topic-cat">${t.category || 'INFO'}</div>
+        <div class="topic-title">${t.title}</div>
+        <div class="topic-date">${t.date}</div>
+      </a>`).join('');
+  } catch(e) {
+    console.log('Topics load error:', e);
+    const grid = document.getElementById('top-topics-grid');
+    if (grid) grid.innerHTML = '';
+  }
+}
+loadTopTopics();
 </script>
 </body>
 </html>
