@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | LASTING HALL - お問い合わせ</title>
+<meta name="description" content="LASTING HALLへのお問い合わせ。ライブのご予約・ホール貸し出しのご相談など、お気軽にご連絡ください。">
+<meta property="og:title" content="Contact | LASTING HALL">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lasting-hall.jp/contact/">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lasting-hall.jp/contact/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#e8001a;--red-dark:#b50014;
+  --white:#ffffff;
+  --gray-700:#222222;--gray-800:#161616;
+  --gray-900:#0d0d0d;--black:#080808;--nav-h:64px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Noto Sans JP','Oswald',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:100;background:var(--black);border-bottom:1px solid #222}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.2em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-family:'Oswald',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:#bbb;text-decoration:none;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-reserve{font-family:'Oswald',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);background:var(--red);padding:10px 22px;text-decoration:none;transition:background 0.2s}
+.nav-reserve:hover{background:var(--red-dark)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-hamburger span{display:block;width:22px;height:1px;background:var(--white)}
+
+.page-hero{padding-top:var(--nav-h);height:280px;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:linear-gradient(135deg,#0d0d0d 0%,#1a0000 60%,#0d0d0d 100%)}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px}
+.page-hero-inner{position:relative;max-width:1200px;margin:0 auto;padding:0 40px 48px;width:100%}
+.breadcrumb{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#555;margin-bottom:16px}
+.breadcrumb a{color:#555;text-decoration:none;transition:color 0.2s}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{margin:0 8px}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,8vw,100px);line-height:0.9;letter-spacing:0.03em;color:var(--white)}
+.page-title em{color:var(--red);font-style:normal}
+
+.section-label{font-family:'Oswald',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.5em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,4vw,56px);letter-spacing:0.04em;color:var(--white);line-height:1;margin-bottom:20px}
+.section-title em{color:var(--red);font-style:normal}
+.rule{width:40px;height:2px;background:var(--red);margin:16px 0 28px}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 40px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* CONTACT LAYOUT */
+#contact{padding:100px 0;background:var(--gray-900)}
+.contact-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start}
+
+/* LEFT: INFO */
+.contact-info{}
+.contact-info p{font-size:16px;color:#ccc;line-height:2;margin-bottom:40px}
+.contact-cards{display:grid;gap:2px}
+.contact-card{background:var(--gray-800);border-left:3px solid transparent;padding:24px 28px;transition:all 0.2s;text-decoration:none;display:block}
+.contact-card:hover{border-left-color:var(--red);background:#1a0000}
+.contact-card-label{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:#555;margin-bottom:8px}
+.contact-card-value{font-family:'Oswald',sans-serif;font-size:20px;font-weight:500;color:var(--white);letter-spacing:0.05em;margin-bottom:4px}
+.contact-card-sub{font-size:13px;color:#666}
+
+.info-note{background:#1a0000;border-left:3px solid var(--red);padding:20px 24px;margin-top:32px}
+.info-note p{font-size:14px;color:#aaa;line-height:1.9}
+
+/* RIGHT: FORM */
+.contact-form{}
+.form-group{margin-bottom:24px}
+.form-label{font-family:'Oswald',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;color:#888;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.form-required{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:0.2em;background:var(--red);color:var(--white);padding:3px 8px}
+.form-optional{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:0.2em;background:#2a2a2a;color:#666;padding:3px 8px}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea{
+  width:100%;
+  background:var(--gray-800);
+  border:1px solid #2a2a2a;
+  color:var(--white);
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:15px;
+  font-weight:300;
+  padding:16px 20px;
+  outline:none;
+  transition:border-color 0.2s;
+  appearance:none;
+  border-radius:0;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--red);
+  background:#1a0a0a;
+}
+input::placeholder,textarea::placeholder{color:#444;font-size:14px}
+textarea{resize:vertical;min-height:160px;line-height:1.8}
+select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 20px center;padding-right:48px}
+select option{background:var(--gray-900);color:var(--white)}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+.form-privacy{background:var(--gray-800);border:1px solid #2a2a2a;padding:20px 24px;margin-bottom:32px}
+.form-privacy p{font-size:13px;color:#888;line-height:1.9}
+.form-privacy a{color:#888;text-decoration:underline;transition:color 0.2s}
+.form-privacy a:hover{color:var(--white)}
+.privacy-check{display:flex;align-items:flex-start;gap:12px;margin-top:16px;cursor:pointer}
+.privacy-check input[type="checkbox"]{width:18px;height:18px;flex-shrink:0;margin-top:2px;cursor:pointer;accent-color:var(--red)}
+.privacy-check span{font-size:14px;color:#aaa;line-height:1.7}
+
+.submit-btn{width:100%;font-family:'Oswald',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--white);background:var(--red);padding:20px;border:none;cursor:pointer;transition:background 0.2s}
+.submit-btn:hover{background:var(--red-dark)}
+.submit-btn:disabled{background:#333;color:#666;cursor:not-allowed}
+
+/* SUCCESS / ERROR */
+.form-result{display:none;padding:24px 28px;margin-top:20px}
+.form-result.success{background:rgba(0,180,80,0.1);border-left:3px solid #00b450}
+.form-result.error{background:#1a0000;border-left:3px solid var(--red)}
+.form-result p{font-size:15px;color:#ccc;line-height:1.9}
+
+/* FOOTER */
+footer{background:var(--gray-900);padding:72px 0 36px;border-top:1px solid var(--gray-700)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--gray-700)}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.2em;color:var(--white);margin-bottom:12px;display:block}
+.footer-logo span{color:var(--red)}
+.footer-brand p{font-size:14px;color:#888;line-height:2;margin-bottom:20px}
+.footer-sns{display:flex;gap:8px}
+.sns-btn{width:32px;height:32px;border:1px solid var(--gray-700);display:flex;align-items:center;justify-content:center;color:#666;text-decoration:none;font-size:11px;transition:all 0.2s}
+.sns-btn:hover{border-color:var(--red);color:var(--red)}
+.footer-col h4{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:#555;margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:14px;color:#888;text-decoration:none;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--white)}
+.footer-info dt{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:3px}
+.footer-info dd{font-size:14px;color:#888;margin-bottom:12px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.15em;color:#444}
+
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links,.nav-reserve{display:none}
+  .nav-hamburger{display:flex}
+  .page-hero-inner,.section-inner{padding:0 20px}
+  .page-hero-inner{padding-bottom:40px}
+  .contact-layout{grid-template-columns:1fr;gap:48px}
+  .form-row{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  section{padding:72px 0!important}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">LASTING <span>HALL</span></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="hall-rent.html">Hall Rent</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="schedule.html" class="nav-reserve">Schedule</a>
+  <div class="nav-hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>—</span>Contact</div>
+    <h1 class="page-title">CON<em>TACT</em></h1>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-layout">
+
+      <!-- LEFT: INFO -->
+      <div class="reveal">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">お問い<em>合わせ</em></h2>
+        <div class="rule"></div>
+        <p>ライブのご予約・ホール貸し出しのご相談など、どんなことでもお気軽にご連絡ください。</p>
+
+        <div class="contact-cards">
+          <a href="tel:095-000-0000" class="contact-card">
+            <div class="contact-card-label">Phone</div>
+            <div class="contact-card-value">095-000-0000</div>
+            <div class="contact-card-sub">受付時間 平日 12:00〜18:00</div>
+          </a>
+          <a href="mailto:info@lasting-hall.jp" class="contact-card">
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-value">info@lasting-hall.jp</div>
+            <div class="contact-card-sub">24時間受付</div>
+          </a>
+          <div class="contact-card">
+            <div class="contact-card-label">Address</div>
+            <div class="contact-card-value" style="font-size:16px">長崎県長崎市本石灰町</div>
+            <div class="contact-card-sub">ビッグビートビル</div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-label">Open</div>
+            <div class="contact-card-value" style="font-size:16px">18:00 – 24:00</div>
+            <div class="contact-card-sub">不定休 / SNSにてお知らせします</div>
+          </div>
+        </div>
+
+        <div class="info-note">
+          <p>お問い合わせいただいた内容によっては、ご回答までにお時間をいただく場合がございます。あらかじめご了承ください。</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="reveal">
+        <form id="contact-form" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">
+                お名前
+                <span class="form-required">必須</span>
+              </label>
+              <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="kana">
+                フリガナ
+                <span class="form-optional">任意</span>
+              </label>
+              <input type="text" id="kana" name="kana" placeholder="ヤマダ タロウ">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">
+              メールアドレス
+              <span class="form-required">必須</span>
+            </label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="tel">
+              電話番号
+              <span class="form-optional">任意</span>
+            </label>
+            <input type="tel" id="tel" name="tel" placeholder="090-0000-0000">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="category">
+              お問い合わせ種別
+              <span class="form-required">必須</span>
+            </label>
+            <select id="category" name="category" required>
+              <option value="" disabled selected>選択してください</option>
+              <option value="ticket">チケット・ライブ予約について</option>
+              <option value="hallrent">ホール貸し出しについて</option>
+              <option value="party">パーティ・イベント利用について</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="subject">
+              件名
+              <span class="form-required">必須</span>
+            </label>
+            <input type="text" id="subject" name="subject" placeholder="例：7月のホール貸し出しについて" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">
+              お問い合わせ内容
+              <span class="form-required">必須</span>
+            </label>
+            <textarea id="message" name="message" placeholder="お問い合わせ内容をご記入ください。" required></textarea>
+          </div>
+
+          <div class="form-privacy">
+            <p>送信前に<a href="#" target="_blank">プライバシーポリシー</a>をお読みいただき、同意のうえ送信してください。</p>
+            <label class="privacy-check">
+              <input type="checkbox" id="privacy" required>
+              <span>プライバシーポリシーに同意する</span>
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submit-btn">送信する</button>
+
+          <div class="form-result success" id="form-success">
+            <p>お問い合わせありがとうございます。内容を確認のうえ、担当者よりご連絡いたします。</p>
+          </div>
+          <div class="form-result error" id="form-error">
+            <p>送信に失敗しました。お手数ですが、時間をおいて再度お試しいただくか、お電話にてお問い合わせください。</p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="section-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">LASTING <span>HALL</span></span>
+        <p>長崎市のライブハウス。<br>長崎県長崎市本石灰町<br>ビッグビートビル</p>
+        <div class="footer-sns">
+          <a href="#" class="sns-btn" aria-label="Instagram">ig</a>
+          <a href="#" class="sns-btn" aria-label="X">x</a>
+          <a href="#" class="sns-btn" aria-label="Facebook">fb</a>
+          <a href="#" class="sns-btn" aria-label="LINE">ln</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="hall-rent.html">Hall Rent</a></li>
+          <li><a href="company.html">Company</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>For You</h4>
+        <ul>
+          <li><a href="schedule.html">ライブを観る</a></li>
+          <li><a href="hall-rent.html">ホールを借りる</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Access</h4>
+        <dl class="footer-info">
+          <dt>Address</dt><dd>長崎県長崎市本石灰町<br>ビッグビートビル</dd>
+          <dt>Tel</dt><dd>095-000-0000</dd>
+          <dt>Open</dt><dd>18:00 – 24:00</dd>
+          <dt>Closed</dt><dd>不定休</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 LASTING HALL. All rights reserved.</p>
+      <p class="footer-copy">
+        <a href="#" style="color:#444;text-decoration:none;margin-right:16px">Privacy</a>
+        <a href="#" style="color:#444;text-decoration:none">Sitemap</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target)}});
+},{threshold:0.1});
+reveals.forEach(el=>obs.observe(el));
+
+// フォームバリデーション・送信
+document.getElementById('contact-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const success = document.getElementById('form-success');
+  const error = document.getElementById('form-error');
+
+  // チェックボックス確認
+  if(!document.getElementById('privacy').checked){
+    alert('プライバシーポリシーへの同意が必要です。');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+  success.style.display = 'none';
+  error.style.display = 'none';
+
+  // ここにフォーム送信処理を実装
+  // 例：FormspreeやGoogleフォームのエンドポイントに送信
+  // const FORM_ENDPOINT = 'https://formspree.io/f/XXXXXXXX';
+  // try {
+  //   const res = await fetch(FORM_ENDPOINT, {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify(Object.fromEntries(new FormData(this)))
+  //   });
+  //   if(res.ok){ success.style.display='block'; this.reset(); }
+  //   else { error.style.display='block'; }
+  // } catch(err){ error.style.display='block'; }
+
+  // デモ用（実装時は上記に差し替え）
+  setTimeout(()=>{
+    success.style.display = 'block';
+    this.reset();
+    btn.disabled = false;
+    btn.textContent = '送信する';
+  }, 1000);
+});
+</script>
+</body>
+</html>
